@@ -8,9 +8,13 @@ export default function Modal({ title, children, onClose }) {
          <motion.dialog
             open
             className="modal"
-            initial={{ opacity: 0, scale: 0.2, y: 600 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.1, y: 800 }}
+            variants={{
+               open: { opacity: 1, scale: 1, y: 0 },
+               closed: { opacity: 0, scale: 0.1, y: 800 },
+            }}
+            initial="closed"
+            animate="open"
+            exit={{ opacity: 0, scale: 0 }}
          >
             <h2>{title}</h2>
             {children}

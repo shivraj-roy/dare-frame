@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 import NewChallenge from "./NewChallenge.jsx";
 
@@ -22,9 +22,13 @@ export default function Header() {
 
          <header id="main-header">
             <h1>Your Challenges</h1>
-            <button onClick={handleStartAddNewChallenge} className="button">
+            <motion.button
+               onClick={handleStartAddNewChallenge}
+               className="button"
+               whileHover={{ backgroundColor: "#8b11f0", scale: 1.03 }}
+            >
                Add Challenge
-            </button>
+            </motion.button>
          </header>
       </>
    );
